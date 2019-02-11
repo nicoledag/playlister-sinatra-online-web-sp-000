@@ -1,7 +1,7 @@
 class GenresController < ApplicationController
 
   get '/genres' do
-    @genres = genre.all
+    @genres = Genre.all
     erb :"genres/index"
   end
 
