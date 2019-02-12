@@ -13,6 +13,7 @@ use Rack::Flash
    end
 
    post "/songs" do
+
      @artist = Artist.find_by(name: params["Artist Name"])
         if !!@artist
           @song = Song.new(name: params[:Name])
@@ -28,7 +29,6 @@ use Rack::Flash
           @song.genres << @genre
           @song.save
         end
-
 
     flash[:message] = "Successfully created song."
     redirect to("/songs/#{@song.slug}")
