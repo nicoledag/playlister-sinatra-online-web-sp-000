@@ -18,15 +18,15 @@ use Rack::Flash
     if !!@artist
       @song = Song.new(name: params[:Name])
       @song.artist = @artist
-      # @genre = Genre.find_by(name: params[:genres])
-      # @song.genres << @genre
+      @genre = Genre.find_by(name: params[:genres])
+      @song.genres << @genre
       @song.save
     else
       @artist = Artist.create(name: params["Artist Name"])
       @song = Song.new(name: params[:Name])
       @song.artist = @artist
-      # @genre = Genre.find_by(name: params[:genres])
-      # @song.genres << @genre
+      @genre = Genre.find_by(name: params[:genres])
+      @song.genres << @genre
       @song.save
     end
 
